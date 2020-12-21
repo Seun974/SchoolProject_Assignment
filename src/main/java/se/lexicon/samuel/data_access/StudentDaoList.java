@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDaoList implements StudentDao {
-    private static List <Student> students;
+    private static List <Student> students = new ArrayList<>();
     boolean isStudentDeleted = false;
 
     @Override

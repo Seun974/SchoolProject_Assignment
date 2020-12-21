@@ -1,6 +1,7 @@
 package se.lexicon.samuel;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -15,8 +16,7 @@ public class Course {
         this.courseName = courseName;
         this.startDate = startDate;
         this.weekDuration = weekDuration;
-       // this.students = students; since we do not know the amount of students to be added
-        //Since the student list grows as it is added
+        this.students = new ArrayList<>();
     }
 
     public int getId() {
@@ -70,5 +70,14 @@ public class Course {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", courseName='" + courseName + '\'' +
+                ", startDate=" + startDate +
+                ", weekDuration=" + weekDuration +
+                ", students=" + students +
+                '}';
+    }
 }

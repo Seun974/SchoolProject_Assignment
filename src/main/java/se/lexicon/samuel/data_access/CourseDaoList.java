@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDaoList implements CourseDao {
-    private static List <Course> courses;
+
+    private static List <Course> courses = new ArrayList<>();
+
     boolean isCourseRemoved = false;
+
+    public CourseDaoList() {
+
+    }
 
     @Override
     public Course saveCourse(Course course) {
@@ -20,14 +26,11 @@ public class CourseDaoList implements CourseDao {
 
     @Override
     public Course findById(int id) {
-        Course searchCourse = new Course(0, null, null,0);
+        Course searchCourse = null;
         for (Course course : courses){
             if(course.getId() == id){
-                searchCourse.setCourseName(course.getCourseName());
-                searchCourse.setId(course.getId());
-                searchCourse.setStartDate(course.getStartDate());
-                searchCourse.setWeekDuration(course.getWeekDuration());
-
+                searchCourse = course;
+                break;
             }
         }
         return searchCourse;
